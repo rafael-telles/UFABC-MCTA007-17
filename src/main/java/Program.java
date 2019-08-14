@@ -1,0 +1,1 @@
+public class Program { public static void main(String[] __args) throws Exception {var a = 123;var b = 10;var c = a+b;var d = a*b;if ((d>c)) { System.out.println(d); } else { System.out.println(c); }if ((b<a)) { System.out.println(b); }}}

@@ -1,0 +1,10 @@
+a = 123
+b = 10
+c = a+b
+d = a*b
+se (d > c) {
+    escreva(d)
+} senão {
+    escreva(c)
+}
+se (b < a) escreva(b)
