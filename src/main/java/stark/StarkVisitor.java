@@ -71,6 +71,18 @@ public interface StarkVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitRead_expr(StarkParser.Read_exprContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link StarkParser#read_string_expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRead_string_expr(StarkParser.Read_string_exprContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link StarkParser#read_number_expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRead_number_expr(StarkParser.Read_number_exprContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link StarkParser#test}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -101,11 +113,17 @@ public interface StarkVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitId(StarkParser.IdContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link StarkParser#integer}.
+	 * Visit a parse tree produced by {@link StarkParser#number}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitInteger(StarkParser.IntegerContext ctx);
+	T visitNumber(StarkParser.NumberContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link StarkParser#string}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitString(StarkParser.StringContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link StarkParser#logical_op}.
 	 * @param ctx the parse tree

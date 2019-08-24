@@ -108,6 +108,26 @@ public interface StarkListener extends ParseTreeListener {
 	 */
 	void exitRead_expr(StarkParser.Read_exprContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link StarkParser#read_string_expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterRead_string_expr(StarkParser.Read_string_exprContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link StarkParser#read_string_expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitRead_string_expr(StarkParser.Read_string_exprContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link StarkParser#read_number_expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterRead_number_expr(StarkParser.Read_number_exprContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link StarkParser#read_number_expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitRead_number_expr(StarkParser.Read_number_exprContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link StarkParser#test}.
 	 * @param ctx the parse tree
 	 */
@@ -158,15 +178,25 @@ public interface StarkListener extends ParseTreeListener {
 	 */
 	void exitId(StarkParser.IdContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link StarkParser#integer}.
+	 * Enter a parse tree produced by {@link StarkParser#number}.
 	 * @param ctx the parse tree
 	 */
-	void enterInteger(StarkParser.IntegerContext ctx);
+	void enterNumber(StarkParser.NumberContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link StarkParser#integer}.
+	 * Exit a parse tree produced by {@link StarkParser#number}.
 	 * @param ctx the parse tree
 	 */
-	void exitInteger(StarkParser.IntegerContext ctx);
+	void exitNumber(StarkParser.NumberContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link StarkParser#string}.
+	 * @param ctx the parse tree
+	 */
+	void enterString(StarkParser.StringContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link StarkParser#string}.
+	 * @param ctx the parse tree
+	 */
+	void exitString(StarkParser.StringContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link StarkParser#logical_op}.
 	 * @param ctx the parse tree

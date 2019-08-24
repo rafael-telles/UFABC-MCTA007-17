@@ -15,6 +15,11 @@
         </dependency>
         <dependency>
             <groupId>org.antlr</groupId>
+            <artifactId>antlr4-master</artifactId>
+            <version>4.7.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.antlr</groupId>
             <artifactId>ST4</artifactId>
             <version>4.1</version>
             <scope>compile</scope>
@@ -23,6 +28,11 @@
             <groupId>com.google.googlejavaformat</groupId>
             <artifactId>google-java-format</artifactId>
             <version>1.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr4</artifactId>
+            <version>4.7.2</version>
         </dependency>
     </dependencies>
 

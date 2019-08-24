@@ -8,13 +8,14 @@ statement
     : if_statement
     | while_statement
     | do_while_statement
-    | '{' statement '}'
-    | expr
+    | '{' statement* '}'
+    | expr ';'
+    | ';'
     ;
 
 if_statement
-    : 'se' paren_expr statement
-    | 'se' paren_expr statement 'senão' statement
+    : 'se' paren_expr 'então' statement
+    | 'se' paren_expr 'então' statement 'senão' statement
     ;
 
 while_statement
@@ -22,7 +23,7 @@ while_statement
     ;
 
 do_while_statement
-    : 'faça' statement 'enquanto' paren_expr
+    : 'faça' statement 'enquanto' paren_expr ';'
     ;
 
 paren_expr
@@ -46,7 +47,16 @@ write_expr
     ;
 
 read_expr
-    : 'leia()'
+    : read_string_expr
+    | read_number_expr
+    ;
+
+read_string_expr
+    : 'lerTexto()'
+    ;
+
+read_number_expr
+    : 'lerNumero()'
     ;
 
 test
@@ -68,25 +78,33 @@ prod
 
 term
     : id
-    | integer
+    | number
+    | string
     | paren_expr
+    | read_expr
     ;
 
 id
-    : STRING
+    : ID
     ;
 
-integer
-    : INT
+number
+    : INT '.'? INT?
+    | INT? '.' INT?
     ;
 
-
-STRING
-    : [a-z]+
+ID
+    : [_$a-zA-Z]+ [_$a-zA-Z0-9]*
     ;
-
 INT
-    : [0-9] +
+    : [0-9]+
+    ;
+
+STRING: '"' (ESC|.)*? '"';
+fragment ESC : '\\"' | '\\\\' ;
+
+string
+    : STRING
     ;
 
 logical_op
@@ -97,6 +115,7 @@ logical_op
     | '>='
     | '<='
     ;
+
 WS
     : [ \r\n\t]+ -> skip
     ;

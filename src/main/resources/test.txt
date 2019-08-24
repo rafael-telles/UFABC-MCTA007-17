@@ -1,10 +1,26 @@
-a = 123
-b = 10
-c = a+b
-d = a*b
-se (d > c) {
-    escreva(d)
-} senão {
-    escreva(c)
-}
-se (b < a) escreva(b)
+op_valida = 0;
+faça {
+    escreva("Escreva o numero A:");
+    a = lerNumero();
+
+    escreva("Escreva o numero B:");
+    b = lerNumero();
+
+    escreva("Escreva o número da operação que deseja fazer:");
+    escreva("[1] +   [2] -   [3] *   [4] /");
+    op = lerNumero();
+
+    resultado = 0;
+    op_valida = 1;
+    se (op == 1) então resultado = a + b;
+    senão se (op == 2) então resultado = a - b;
+    senão se (op == 3) então resultado = a * b;
+    senão se (op == 4) então resultado = a / b;
+    senão op_valida = 0;
+
+    se (op_valida == 1) então {
+        escreva("Resultado: " + resultado);
+    } senão {
+        escreva("Operação invalida! Tente novamente");
+    }
+} enquanto (op_valida == 0);
